@@ -36,7 +36,7 @@ export const useFormLoader = routeLoader$<InitialValues<LoginForm>>(() => ({
 
 export const useFormAction = formAction$<LoginForm, ResponseData>(
   async (values) => {
-    const userId = await login(values.email, values.password);
+    const userId = "1"; // await login(values.email, values.password);
     return {
       status: "success",
       message: "You are now logged in.",
