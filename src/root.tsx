@@ -7,6 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export default component$(() => {
   /**
