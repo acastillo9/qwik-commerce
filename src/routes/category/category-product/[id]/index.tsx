@@ -84,7 +84,7 @@ export default component$(() => {
             />
           );
         })}
-        {products.value?.length < 1 && (
+        {products.value?.length && products.value.length < 1 && (
           <p class="text-2xl my-4 text-center font-semibold text-red-400">
             No Product Found in this Category
           </p>

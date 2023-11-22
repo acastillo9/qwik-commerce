@@ -7,7 +7,7 @@ export const getAllCategories = server$(async function () {
   try {
     const categoriesModel = await Category.find({});
     const categories = categoriesModel.map(category => category.toObject({
-      transform: (doc, ret) => {
+      transform: (doc: any, ret: any) => {
         ret._id = ret._id.toString(),
         delete ret.__v
       }

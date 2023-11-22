@@ -7,7 +7,7 @@ export const getProductById = server$(async function (id) {
   try {
     const productModel = await Product.findById(id).populate('productCategory' ,' categoryName categorySlug _id')
     const product = productModel.toObject({
-      transform: (doc, ret) => {
+      transform: (doc: any, ret: any) => {
         ret._id = ret._id.toString(),
         delete ret.__v
       }

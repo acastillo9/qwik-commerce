@@ -10,13 +10,7 @@ type CategoryData = {
 };
 
 export default component$(
-  ({
-    categoryDescription,
-    categoryImage,
-    categoryName,
-    categorySlug,
-    _id,
-  }: CategoryData) => {
+  ({ categoryImage, categoryName, _id }: CategoryData) => {
     const nav = useNavigate();
     return (
       <div
