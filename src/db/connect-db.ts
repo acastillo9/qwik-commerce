@@ -1,4 +1,4 @@
-import mongoose, { type ConnectOptions } from "mongoose";
+import { type ConnectOptions, connect, set } from "mongoose";
 
 interface connectedOptions extends ConnectOptions {
   useNewUrlParser: boolean;
@@ -13,13 +13,12 @@ const options: connectedOptions = {
 // connecting to database
 const connectDB = async (dbURI: string) => {
   const connectionUrl: string = dbURI;
-  mongoose
-    .connect(connectionUrl, options)
+  connect(connectionUrl, options)
     .then(() => console.log(`Database connected successfully`))
     .catch((err) =>
       console.log("Getting Error from DB connection" + err.message),
     );
-  mongoose.set("strictQuery", false);
+  set("strictQuery", false);
 };
 
 export default connectDB;
